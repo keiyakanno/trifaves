@@ -16,6 +16,7 @@ class FavoritesController < ApplicationController
   def new
     if user_signed_in?
       @favorite = current_user.favorites.build
+      @favorite_detail = @favorite.favorite_details.build
     end
   end
   

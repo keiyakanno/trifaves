@@ -11,23 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822034316) do
+ActiveRecord::Schema.define(version: 20150822035350) do
 
-# Could not dump table "favorite_details" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "favorite_details", force: :cascade do |t|
+    t.string   "detail_number"
+    t.string   "description"
+    t.integer  "favorite_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "favorites", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "item_1"
     t.integer  "user_id"
     t.string   "title"
     t.integer  "item_id"
     t.text     "description"
-    t.integer  "favorite_detail_id"
   end
 
-  add_index "favorites", ["favorite_detail_id"], name: "index_favorites_on_favorite_detail_id"
   add_index "favorites", ["item_id"], name: "index_favorites_on_item_id"
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
