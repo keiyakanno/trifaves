@@ -62,3 +62,5 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 # Bootstrap
 gem 'bootstrap-sass'
+# Debug
+gem 'pry-byebug', group: :development

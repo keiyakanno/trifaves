@@ -1,7 +1,7 @@
 <h1>3つのお気に入りを教えてください</h1>
 
 <% if user_signed_in? %>
-  <%= form_for(@favorite) do |f| %>
+  <%= form_for @favorite do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
     <%= f.label :description %>

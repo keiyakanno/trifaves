@@ -1,1 +1,7 @@
 <h1><%= @favorite.title %></h1>
+
+<%  @favorite.favorite_details.each do |f| %>
+  <div>
+    <%= f.description %><br>
+  </div>
+<% end %>
