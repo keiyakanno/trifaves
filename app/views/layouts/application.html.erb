@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Trifaves</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>3fav.es</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <header class="navbar navbar-fixed-top">
+    <div class="container">
+      <%= link_to image_tag('/images/3favesLogoHeader.png'), '#', id:"logo" %>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home",   '#' %></li>
+          <li><%= link_to "使い方",   '#' %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "新しく登録", new_favorite_path %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "ログイン", user_omniauth_authorize_path(:twitter) %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

@@ -56,3 +56,9 @@ gem 'rakuten_web_service'
 gem 'amazon-ecs'
 # Login
 gem 'devise'
+# OAuth
+gem 'omniauth'
+# Twitter OAuth
+gem 'omniauth-twitter'
+# Bootstrap
+gem 'bootstrap-sass'

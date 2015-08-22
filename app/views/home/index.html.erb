@@ -1,0 +1,9 @@
+<h1>Home</h1>
+
+<%  @feed_favorites.each do |f| %>
+  <div>
+    <%= link_to f.title, f %><br>
+    <%= f.description %><br>
+    <%= f.user.email %>
+  </div>
+<% end %>
